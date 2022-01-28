@@ -1,0 +1,5 @@
+/myh2oblogvenv
+.idea
+__pycache__
+*.bat
+gitPush.py
