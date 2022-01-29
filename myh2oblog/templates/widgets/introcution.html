@@ -1,0 +1,28 @@
+{% load static %}
+<div class="widget-info aside-widgets">
+    <div class="widget-info-avatar">
+        <img src="{% static 'blog/img/avatar.jpg' %}" alt="你好啊">
+        <p>FQY</p>
+        <p class="avartar-contact">QQ 1470368942</p>
+    </div>
+    <div class="widget-info-calc">
+        <div>
+            <p class="calc-type">文章</p>
+            <p class="calc-num">{{ article_total | default:"999" }}</p>
+        </div>
+        <div>
+            <p class="calc-type">分类</p>
+            <p class="calc-num">{{ category_total | default:"999" }}</p>
+        </div>
+        <div>
+            <p class="calc-type">标签</p>
+            <p class="calc-num">{{ tag_total | default:"999" }}</p>
+        </div>
+    </div>
+    <div class="follow btn-hover">
+        <a href="#">
+            <i class="fab fa-github"></i>
+            <span>Follow Me</span>
+        </a>
+    </div>
+</div>

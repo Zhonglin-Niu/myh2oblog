@@ -1,0 +1,32 @@
+#app {
+  margin: 0 auto;
+  width: 1200px;
+}
+#app header {
+  border-bottom: 2px black solid;
+}
+#app header .navbar {
+  padding: 20px 0 5px;
+  display: flex;
+  justify-content: space-between;
+}
+#app header .navbar .left {
+  font-size: 24px;
+}
+#app header .navbar .right {
+  display: flex;
+}
+#app header .navbar .right .menu-item {
+  margin-left: 20px;
+  transition: all 0.5s;
+}
+#app header .navbar .right .menu-item:hover {
+  color: green;
+}
+#app main {
+  min-height: 95vh;
+  width: 100%;
+  background-color: #70d7d0;
+}
+
+/*# sourceMappingURL=main.css.map */

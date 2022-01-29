@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>进阶 CSS</title>
+		<link rel="icon" href="./img/favicon.png" />
+		<link rel="stylesheet" type="text/css" href="./css/main.css" />
+		<link rel="stylesheet" type="text/css" href="./css/general.css" />
+		<link rel="stylesheet" type="text/css" href="./css/monokai.css" />
+		<script src="https://kit.fontawesome.com/0fa59ebf5c.js" crossorigin="anonymous"></script>
+		<style type="text/css">
+			.web-header {
+				background-image: url(./img/cover6.jpg);
+				height: 60vh;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="web-bg"></div>
+		<header class="web-header">
+			<nav class="navbar">
+				<span class="nav-title">小牛博客</span>
+				<div class="menu-items">
+					<div class="menu-item">
+						<a href="#">
+							<i class="fa-fw fas fa-home"></i>
+							<span>Home</span>
+						</a>
+					</div>
+					<div class="menu-item">
+						<a href="#">
+							<i class="fa-fw fas fa-archive"></i>
+							<span>Archives</span>
+						</a>
+					</div>
+					<div class="menu-item">
+						<a href="#">
+							<i class="fa-fw fas fa-tags"></i>
+							<span>Tags</span>
+						</a>
+					</div>
+					<div class="menu-item">
+						<a href="#">
+							<i class="fa-fw fas fa-folder-open"></i>
+							<span>Categories</span>
+						</a>
+					</div>
+					<div class="menu-item">
+						<a href="#">
+							<i class="fa-fw fas fa-link"></i>
+							<span>Link</span>
+						</a>
+					</div>
+					<div class="menu-item">
+						<a href="#">
+							<i class="fa-fw fas fa-heart"></i>
+							<span>About</span>
+						</a>
+					</div>
+				</div>
+			</nav>
+			<div class="article-info">
+				<br>
+				<h2 class="article-title">CSS 的一些进阶小技巧</h2>
+				<p class="article-meta-wrap">
+					<i class="far fa-calendar-alt fa-fw post-meta-icon"></i>
+					<span>发表于</span>
+					<time>2021-07-28</time>
+					<span>|</span>
+					<i class="fas fa-history fa-fw post-meta-icon"></i>
+					<span>更新于</span>
+					<time>2021-07-28</time>
+					<span>
+						<span>|</span>
+						<i class="fas fa-inbox fa-fw post-meta-icon"></i>
+						<a href="#">前端</a>
+					</span>
+				</p>
+				<p class="article-meta-wrap">
+					<i class="far fa-eye fa-fw post-meta-icon"></i>
+					<span>阅读量:</span>
+					<span>24</span>
+				</p>
+			</div>
+		</header>
+		<main class="web-main">
+			<div class="web-main-aside">
+				<div class="widget-info aside-widgets">
+					<div class="widget-info-avatar">
+						<img src="./img/avatar.jpg" alt="你好啊">
+						<p>FQY</p>
+						<p class="avartar-contact">QQ 1470368942</p>
+					</div>
+					<div class="widget-info-calc">
+						<div>
+							<p class="calc-type">文章</p>
+							<p class="calc-num">6</p>
+						</div>
+						<div>
+							<p class="calc-type">分类</p>
+							<p class="calc-num">3</p>
+						</div>
+						<div>
+							<p class="calc-type">标签</p>
+							<p class="calc-num">5</p>
+						</div>
+					</div>
+					<div class="follow btn-hover">
+						<a href="#">
+							<i class="fab fa-github"></i>
+							<span>Follow Me</span>
+						</a>
+					</div>
+				</div>
+				<div class="aside-widgets widget-announce">
+					<div class="head">
+						<i class="fas fa-bullhorn" style="color: red;"></i>
+						<span>公告</span>
+					</div>
+					<p>Welcome to see my blog. If you have any question, please contact with me.</p>
+				</div>
+				<div class="sticky-aside">
+					<div class="aside-recent-post aside-widgets">
+						<div class="head">
+							<i class="fas fa-history"></i>
+							<span>最新文章</span>
+						</div>
+						<div class="aside-recent-post-items">
+							<div class="aside-recent-post-item">
+								<a href="#" title="CSS 的一些进阶小技巧">
+									<img src="./img/cover8.jpg" alt="CSS 的一些进阶小技巧">
+								</a>
+								<div class="aside-recent-post-item-content">
+									<a href="#" title="CSS 的一些进阶小技巧">CSS 的一些进阿斯顿发到付asd傻傻的阿萨德阶小技巧</a>
+									<time title="发表于 2021-07-28 17:35:05">2021-07-28</time>
+								</div>
+							</div>
+							<div class="aside-recent-post-item">
+								<a href="#" title="CSS 的一些进阶小技巧">
+									<img src="./img/cover1.jpg" alt="CSS 的一些进阶小技巧">
+								</a>
+								<div class="aside-recent-post-item-content">
+									<a href="#" title="CSS 的一些进阶小技巧">Django 配置数据库</a>
+									<time title="发表于 2021-07-28 17:35:05">2021-11-03</time>
+								</div>
+							</div>
+							<div class="aside-recent-post-item">
+								<a href="#" title="CSS 的一些进阶小技巧">
+									<img src="./img/cover6.jpg" alt="CSS 的一些进阶小技巧">
+								</a>
+								<div class="aside-recent-post-item-content">
+									<a href="#" title="CSS 的一些进阶小技巧">Django 配置数据库阿福看法</a>
+									<time title="发表于 2021-07-28 17:35:05">2021-11-28</time>
+								</div>
+							</div>
+							<div class="aside-recent-post-item">
+								<a href="#" title="CSS 的一些进阶小技巧">
+									<img src="./img/cover7.jpg" alt="CSS 的一些进阶小技巧">
+								</a>
+								<div class="aside-recent-post-item-content">
+									<a href="#" title="CSS 的一些进阶小技巧">阿斯顿发到付asd傻傻的阿萨德阶小技巧</a>
+									<time title="发表于 2021-07-28 17:35:05">2021-04-28</time>
+								</div>
+							</div>
+							<div class="aside-recent-post-item">
+								<a href="#" title="CSS 的一些进阶小技巧">
+									<img src="./img/cover4.jpg" alt="CSS 的一些进阶小技巧">
+								</a>
+								<div class="aside-recent-post-item-content">
+									<a href="#" title="CSS 的一些进阶小技巧">C傻傻的阿萨德阶小技巧</a>
+									<time title="发表于 2021-07-28 17:35:05">2021-05-28</time>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="widget-site-info aside-widgets">
+						<div class="head">
+							<i class="fas fa-chart-line"></i>
+							<span>网站资讯</span>
+						</div>
+						<p>文章数目：<span>8</span></p>
+						<p>已运行天数：<span>8</span></p>
+						<p>本站访客数：<span>8</span></p>
+						<p>本站访问量：<span>8</span></p>
+						<p>最后更新：<span>8天前</span></p>
+					</div>
+				</div>
+			</div>
+			<div class="web-main-content">
+				<div class="article" article="true">
+<h2 id="hahaha">哈哈哈 Hahaha</h2>
+<h3 id="_1">小一</h3>
+<ul>
+<li>列一</li>
+<li>列二</li>
+<li>列三</li>
+<li>列四</li>
+<li>
+<p>列五</p>
+</li>
+<li>
+<p>序列一</p>
+</li>
+<li>序列二</li>
+<li>序列三</li>
+<li>序列四</li>
+<li>序列五</li>
+<li>序列六</li>
+</ul>
+<h3 id="_2">小二</h3>
+<div class="codehilite"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">fileName</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">fileName</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myownhost.txt&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;encoding=&quot;utf-8&quot;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">readlines</span><span class="p">()]</span>
+</code></pre></div>
+
+<h3 id="_3">小三</h3>
+<h4 id="_4">小小一</h4>
+<p>我真是个贾老师都放假了可适当减肥啦<strong>阿斯顿发斯蒂芬</strong></p>
+<p>鉴于<code>哈哈哈</code></p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>阿斯顿发到付</td>
+<td>久违的父亲</td>
+<td>我撒打发个</td>
+</tr>
+<tr>
+<td>阿斯顿发斯蒂芬</td>
+<td>我裕仁天皇</td>
+<td>华为干嘛去</td>
+</tr>
+<tr>
+<td>阿斯顿发华夫格</td>
+<td>IQ额GVad</td>
+<td>废话发发呆活动费</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_5">小四</h3>
+<blockquote>
+<p>阿双方均阿斯蒂芬卡时间段或发生发的加上发动机暗示法咳嗽大法卡了世纪东方埃里克森京东方卡了圣诞节卡洛斯卡的法拉克</p>
+</blockquote>
+<p><a href="https://www.baidu.com">好</a></p>
+<p>点此进入官网<a href="https://www.baidu.com">好</a></p>
+<p>查看图片示例</p>
+<p><img alt="favicon" src="https://cdn.jsdelivr.net/gh/FQY7/blog_images@master/20210522/favicon.png" /></p>
+				</div>
+			</div>
+		</main>
+		<footer class="web-footer">
+			<div class="web-footer-info">
+				<p>©2021 By FQY</p>
+				<p>Powered by <a href="#">蜀ICP备XXXXXXx号-1</a></p>
+				<p>Best Wishes 0.0</p>
+			</div>
+		</footer>
+		<script src="./js/main.js"></script>
+	</body>
+</html>

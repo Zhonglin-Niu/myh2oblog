@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %} | 个人博客</title>
+    <link rel="shortcut icon" href="http://pic.myh2o.top/favicon">
+    <link rel="stylesheet" href="{% static 'article/css/reset.css' %}">
+    {% block top-imports %}
+
+    {% endblock %}
+</head>
+<body>
+<div class="web-bg"></div>
+<div id="app">
+    {% block header %}
+
+    {% endblock %}
+    {% block main %}
+
+    {% endblock %}
+    {% block footer %}
+
+    {% endblock %}
+    {% block bottom-imports %}
+
+    {% endblock %}
+</div>
+</body>
+</html>

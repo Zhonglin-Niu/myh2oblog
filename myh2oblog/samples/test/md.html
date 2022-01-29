@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<link rel="stylesheet" href="./monokai.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"
+			media="all" onload="this.media='all'">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="all"
+			onload="this.media='all'">
+		<script src="https://kit.fontawesome.com/0fa59ebf5c.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div class="toc">
+			<ul>
+				<li><a href="#_1">一级标题</a>
+					<ul>
+						<li><a href="#_2">二级标题</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<hr>
+		<div article="true" style="width: 50%; position: relative; left: 30%; border: 2px cyan solid;">
+			<h1 id="_1">一级标题 Name</h1>
+			<ol>
+				<li>阿斯蒂芬</li>
+				<li>大沙发到付</li>
+				<li>富商大贾</li>
+				<li>很舒服</li>
+				<li>还让他</li>
+			</ol>
+			<blockquote>
+				<p>介绍下该怎么下象棋</p>
+			</blockquote>
+			<h2 id="_2">二级标题</h2>
+			<p><em>斜体</em></p>
+			<p><strong>粗体</strong></p>
+			<p><strong><em>粗斜体</em></strong></p>
+			<div class="codehilite">
+				<pre><span></span><code><span class="n">md</span> <span class="o">=</span> <span class="n">markdown</span><span
+        class="o">.</span><span class="n">Markdown</span><span class="p">(</span><span class="n">extensions</span><span
+        class="o">=</span><span class="p">[</span>
+    <span class="s1">&#39;markdown.extensions.extra&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;markdown.extensions.codehilite&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;markdown.extensions.toc&#39;</span><span class="p">,</span> <span class="p">])</span>
+<span class="n">html</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">convert</span><span
+            class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">open</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">,</span> <span
+            class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span
+            class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span
+            class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">html</span><span
+            class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">md</span><span class="o">.</span><span class="n">toc</span><span
+            class="p">)</span>
+</code></pre>
+			</div>
+
+			<div class="codehilite">
+				<pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>
+    Nice！
+<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span
+            class="s">&quot;#&quot;</span><span class="p">&gt;</span>go<span class="p">&lt;/</span><span
+            class="nt">a</span><span class="p">&gt;</span>
+</code></pre>
+			</div>
+
+			<p><code>关键字</code> 阿道夫</p>
+			<p>==高亮==</p>
+			<hr />
+			<p><img alt="哈哈哈" src="https://cdn.jsdelivr.net/gh/FQY7/blog_images@master/20210523/css.jpg" /></p>
+			<p><img alt="哈哈哈" src="img/bg.jpg" /></p>
+			<table>
+				<thead>
+					<tr>
+						<th>名字</th>
+						<th>年龄</th>
+						<th>性别</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Anda</td>
+						<td>15</td>
+						<td>男</td>
+					</tr>
+					<tr>
+						<td>Moicus</td>
+						<td>16</td>
+						<td>女</td>
+					</tr>
+					<tr>
+						<td>Boluer</td>
+						<td>17</td>
+						<td>男</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="footnote">
+				<hr />
+				<ol>
+					<li id="fn:脚注">
+						<p>阿斯顿发&#160;<a class="footnote-backref" href="#fnref:脚注"
+								title="Jump back to footnote 1 in the text">&#8617;</a>
+						</p>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</body>
+</html>

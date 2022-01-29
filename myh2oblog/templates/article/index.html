@@ -1,32 +1,71 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="./elementui/theme-chalk/index.css">
-    <script src="./vue/vue.js"></script>
-    <script src="./elementui/index.js"></script>
-</head>
-<body>
-<div id="app">
-    <el-button @click="visible = true">Buttonasfd</el-button>
-    <el-dialog :visible.sync="visible" title="Hello world">
-        <p>Try Element</p>
-    </el-dialog>
-</div>
-<script>
-    new Vue({
-        el: '#app',
-        data: function () {
-            return {visible: false}
-        },
-        created() {
+{% extends 'base.html' %}
+{% load my_tags %}
+{% block title %}小牛博客{% endblock %}
+{% block top-imports %}
+    {% include 'imports/font-awesome.html' %}
+    {% include 'imports/vue.html' %}
+    {% include 'imports/element-ui.html' %}
+    <link rel="stylesheet" href="{% static 'article/css/main.css' %}">
+{% endblock %}
+{% block header %}
+    <header>
+        <nav class="navbar">
+            <div class="left">
+                <span class="nav-title">小牛博客</span>
+            </div>
+            <div class="right">
+                <div class="menu-item">
+                    <a href="#">
+                        <i class="fa-fw fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#">
+                        <i class="fa-fw fas fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#">
+                        <i class="fa-fw fas fa-tags"></i>
+                        <span>Tags</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#">
+                        <i class="fa-fw fas fa-folder-open"></i>
+                        <span>Categories</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#">
+                        <i class="fa-fw fas fa-link"></i>
+                        <span>Link</span>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="#">
+                        <i class="fa-fw fas fa-heart"></i>
+                        <span>About</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+{% endblock %}
+{% block main %}
+    <main></main>
+{% endblock %}
+{% block footer %}
+    <footer>
+        <div class="footer-info">
+            <p>©2021 By FQY</p>
+            <p>Powered by <a href="#">蜀ICP备XXXXXXx号-1</a></p>
+            <p>Best Wishes 0.0</p>
+        </div>
+    </footer>
+{% endblock %}
+{% block bottom-imports %}
 
-        }
-    })
-</script>
-</body>
-</html>
+{% endblock %}
