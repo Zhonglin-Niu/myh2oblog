@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %} | 个人博客</title>
     <link rel="shortcut icon" href="http://pic.myh2o.top/favicon">
+{#    {% include 'imports/vue.html' %}#}
+{#    {% include 'imports/element-ui.html' %}#}
     <link rel="stylesheet" href="{% static 'article/css/reset.css' %}">
     {% block top-imports %}
 
@@ -24,9 +26,9 @@
     {% block footer %}
         {% include 'components/footer.html' %}
     {% endblock %}
-    {% block bottom-imports %}
-
-    {% endblock %}
 </div>
+{% block bottom-imports %}
+
+{% endblock %}
 </body>
 </html>

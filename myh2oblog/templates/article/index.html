@@ -79,7 +79,8 @@
                         </a>
                     </div>
                     <div class="article-info">
-                        <div class="article-title"><a href="{% url 'article:arti_detail' article.id %}">{{ article.title}}</a></div>
+                        <div class="article-title"><a
+                                href="{% url 'article:arti_detail' article.id %}">{{ article.title }}</a></div>
                         <div class="article-meta-info">
                             <p><i class="fa-fw fas fa-clock"></i>{{ article.created|date:"Y-m-d" }}</p>
                             <p class="separater">|</p>
@@ -95,4 +96,10 @@
     </main>
 {% endblock %}
 {% block bottom-imports %}
+{#    <script>#}
+{#        const vue = new Vue({#}
+{#            el: "#app",#}
+{#            delimiters: ["[[", "]]"],#}
+{#        })#}
+{#    </script>#}
 {% endblock %}

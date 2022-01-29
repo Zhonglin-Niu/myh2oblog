@@ -17,8 +17,3 @@ def cut(value, change):
 def lower(value):  # Only one argument.
     """Converts a string into all lowercase"""
     return value.lower()
-
-
-@register.simple_tag
-def banner(name):
-    return name

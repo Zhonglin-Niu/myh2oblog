@@ -59,11 +59,11 @@
   padding: 5px 0;
 }
 .article .article-info .article-title {
-  font-size: 20px;
+  font-size: 26px;
   transition: all 0.4s;
 }
 .article .article-info .article-title:hover {
-  color: #5daf34;
+  color: #2498ab;
 }
 .article .article-info .article-meta-info {
   display: flex;
@@ -105,11 +105,50 @@
   display: flex;
 }
 #app header .navbar .right .menu-item {
+  position: relative;
   margin-left: 20px;
-  transition: all 0.4s;
+  transition: all 0.5s;
 }
-#app header .navbar .right .menu-item:hover {
-  color: green;
+#app header .navbar .right .menu-item:hover .expand {
+  transform: rotateZ(180deg);
+}
+#app header .navbar .right .menu-item:hover .menus-item-child {
+  display: flex;
+}
+#app header .navbar .right .menu-item > a {
+  transition: all 0.3s;
+}
+#app header .navbar .right .menu-item > a:hover {
+  color: #2498ab;
+}
+#app header .navbar .right .menu-item .menus-item-child {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 130%;
+  left: 0;
+  right: 0;
+  background-color: #3c627a;
+  box-shadow: 0 5px 20px -4px rgba(0, 0, 0, 0.5);
+}
+#app header .navbar .right .menu-item .menus-item-child::before {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  content: "";
+}
+#app header .navbar .right .menu-item .menus-item-child li {
+  padding: 10px 0;
+  transition: all 0.2s;
+}
+#app header .navbar .right .menu-item .menus-item-child li:hover {
+  color: #5daf34;
+}
+#app header .navbar .right li {
+  list-style: none;
 }
 #app main {
   margin: 80px auto 40px;
@@ -151,20 +190,20 @@
   background-color: white;
   padding: 20px;
 }
-#app main .right .article-info {
+#app main .right > .article-info {
   margin-bottom: 30px;
   border-bottom: 2px #ddd solid;
 }
-#app main .right .article-info .article-title {
+#app main .right > .article-info .article-title {
   font-size: 35px;
   color: #2498ab;
   font-weight: bolder;
 }
-#app main .right .article-info .article-detail {
+#app main .right > .article-info .article-detail {
   padding: 10px 0;
   display: flex;
 }
-#app main .right .article-info .article-detail .separater {
+#app main .right > .article-info .article-detail .separater {
   padding: 0 5px;
 }
 #app main .right #article-content {

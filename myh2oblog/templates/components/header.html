@@ -40,6 +40,23 @@
                     <span>关于</span>
                 </a>
             </div>
+            {% if request.user.is_superuser %}
+                <div class="menu-item">
+                    <a href="#">
+                        <i class="fa-fw fas fa-list"></i>
+                        <span>{{ request.user.username }}后台</span>
+                        <i class="fa-fw fas fas fa-chevron-down expand"></i>
+                    </a>
+                    <ul class="menus-item-child">
+                        <li>
+                            <a href="{% url 'api:postArticle' %}">
+                                <i class="fa-fw fas fa-poll"></i>
+                                <span>发布文章</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            {% endif %}
         </div>
     </nav>
 </header>
