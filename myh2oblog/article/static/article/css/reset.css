@@ -65,6 +65,7 @@ a {
 .web-bg {
     z-index: -999;
     position: fixed;
+    top: 0;
     width: 100%;
     height: 100%;
     background-color: #A9C9FF;

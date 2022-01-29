@@ -1,71 +1,98 @@
 {% extends 'base.html' %}
 {% load my_tags %}
-{% block title %}小牛博客{% endblock %}
+{% block title %}吾水记{% endblock %}
 {% block top-imports %}
     {% include 'imports/font-awesome.html' %}
-    {% include 'imports/vue.html' %}
-    {% include 'imports/element-ui.html' %}
     <link rel="stylesheet" href="{% static 'article/css/main.css' %}">
 {% endblock %}
-{% block header %}
-    <header>
-        <nav class="navbar">
-            <div class="left">
-                <span class="nav-title">小牛博客</span>
-            </div>
-            <div class="right">
-                <div class="menu-item">
-                    <a href="#">
-                        <i class="fa-fw fas fa-home"></i>
-                        <span>Home</span>
-                    </a>
-                </div>
-                <div class="menu-item">
-                    <a href="#">
-                        <i class="fa-fw fas fa-archive"></i>
-                        <span>Archives</span>
-                    </a>
-                </div>
-                <div class="menu-item">
-                    <a href="#">
-                        <i class="fa-fw fas fa-tags"></i>
-                        <span>Tags</span>
-                    </a>
-                </div>
-                <div class="menu-item">
-                    <a href="#">
-                        <i class="fa-fw fas fa-folder-open"></i>
-                        <span>Categories</span>
-                    </a>
-                </div>
-                <div class="menu-item">
-                    <a href="#">
-                        <i class="fa-fw fas fa-link"></i>
-                        <span>Link</span>
-                    </a>
-                </div>
-                <div class="menu-item">
-                    <a href="#">
-                        <i class="fa-fw fas fa-heart"></i>
-                        <span>About</span>
-                    </a>
-                </div>
-            </div>
-        </nav>
-    </header>
-{% endblock %}
 {% block main %}
-    <main></main>
-{% endblock %}
-{% block footer %}
-    <footer>
-        <div class="footer-info">
-            <p>©2021 By FQY</p>
-            <p>Powered by <a href="#">蜀ICP备XXXXXXx号-1</a></p>
-            <p>Best Wishes 0.0</p>
+    <main>
+        <div class="left">
+            <div class="card">
+                <div class="head">
+                    <div class="title">
+                        <i class="fa-fw fas fa-id-card"></i>
+                        <p>站长信息</p>
+                    </div>
+                </div>
+                <div class="body">
+                    <p>一个高中生</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="head">
+                    <div class="title">
+                        <i class="fa-fw fas fa-bullhorn"></i>
+                        <p>公告</p>
+                    </div>
+                </div>
+                <div class="body">
+                    <p>未想好公告，祝看到此博客的人开心吧</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="head">
+                    <div class="title">
+                        <i class="fa-fw fas fa-tags"></i>
+                        <p>标签云</p>
+                    </div>
+                </div>
+                <div class="body">
+                    <a href="#">{% lorem 1 w %}</a>
+                    <a href="#">{% lorem 1 w %}</a>
+                    <a href="#">{% lorem 1 w %}</a>
+                    <a href="#">{% lorem 1 w %}</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="head">
+                    <div class="title">
+                        <i class="fa-fw fas fa-folder-open"></i>
+                        <p>分类</p>
+                    </div>
+                </div>
+                <div class="body">
+                    <a href="#">{% lorem 1 w %}</a>
+                    <a href="#">{% lorem 1 w %}</a>
+                    <a href="#">{% lorem 1 w %}</a>
+                    <a href="#">{% lorem 1 w %}</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="head">
+                    <div class="title">
+                        <i class="fa-fw fas fa-folder-open"></i>
+                        <p>网站信息</p>
+                    </div>
+                </div>
+                <div class="body">
+                    <p>文章共计8篇</p>
+                </div>
+            </div>
         </div>
-    </footer>
+        <div class="right">
+            {% for article in articles %}
+                <div class="article">
+                    <div class="article-img">
+                        <a href="{% url 'article:arti_detail' article.id %}">
+                            <img src="{{ article.cover }}" alt="">
+                        </a>
+                    </div>
+                    <div class="article-info">
+                        <div class="article-title"><a href="{% url 'article:arti_detail' article.id %}">{{ article.title}}</a></div>
+                        <div class="article-meta-info">
+                            <p><i class="fa-fw fas fa-clock"></i>{{ article.created|date:"Y-m-d" }}</p>
+                            <p class="separater">|</p>
+                            <p><i class="fa-fw fas fa-inbox"></i>{{ article.category }}</p>
+                        </div>
+                        <div class="article-description">
+                            <p>{{ article.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
 {% endblock %}
 {% block bottom-imports %}
-
 {% endblock %}

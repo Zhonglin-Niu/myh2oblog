@@ -1,14 +1,102 @@
-#app {
-  margin: 0 auto;
-  width: 1200px;
+.card {
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.06);
 }
-#app header {
-  border-bottom: 2px black solid;
-}
-#app header .navbar {
-  padding: 20px 0 5px;
+.card .head {
   display: flex;
   justify-content: space-between;
+}
+.card .head .title {
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+}
+.card .head .title > p {
+  padding-left: 10px;
+}
+.card .body {
+  padding-top: 15px;
+}
+
+.article {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 180px;
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 8px 50px 50px 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.06);
+}
+.article .article-img {
+  position: relative;
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+}
+.article .article-img img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.6s;
+  object-fit: cover;
+}
+.article .article-img img:hover {
+  transform: scale(1.1);
+}
+.article .article-info {
+  display: flex;
+  width: 60%;
+  height: 100%;
+  padding: 0 25px;
+  flex-direction: column;
+  justify-content: center;
+}
+.article .article-info > div {
+  padding: 5px 0;
+}
+.article .article-info .article-title {
+  font-size: 20px;
+  transition: all 0.4s;
+}
+.article .article-info .article-title:hover {
+  color: #5daf34;
+}
+.article .article-info .article-meta-info {
+  display: flex;
+  align-items: baseline;
+  color: #858585;
+}
+.article .article-info .article-meta-info i {
+  padding-right: 5px;
+}
+.article .article-info .article-meta-info .separater {
+  padding: 0 5px;
+}
+.article .article-info .article-description p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#app header .navbar {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55px;
+  color: var(--white);
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--navbar-bg);
 }
 #app header .navbar .left {
   font-size: 24px;
@@ -18,15 +106,84 @@
 }
 #app header .navbar .right .menu-item {
   margin-left: 20px;
-  transition: all 0.5s;
+  transition: all 0.4s;
 }
 #app header .navbar .right .menu-item:hover {
   color: green;
 }
 #app main {
+  margin: 80px auto 40px;
+  width: 1200px;
   min-height: 95vh;
+  display: flex;
+  justify-content: space-between;
+}
+#app main .left {
+  width: 30%;
+}
+#app main .left .sticky-part {
+  top: 80px;
+  position: sticky;
+}
+#app main .left #article-toc li {
+  list-style: none;
+}
+#app main .left #article-toc a {
+  color: #5da8c5;
+  font-size: 18px;
+  transition: all 0.5s;
+  display: block;
   width: 100%;
-  background-color: #70d7d0;
+  line-height: 1.5;
+}
+#app main .left #article-toc a:hover {
+  color: white;
+  background: #2fa6de;
+}
+#app main .left #article-toc div > ul {
+  padding: 0 10px;
+}
+#app main .left #article-toc div > ul > li ul {
+  padding: 0 15px;
+}
+#app main .right {
+  width: 68%;
+  background-color: white;
+  padding: 20px;
+}
+#app main .right .article-info {
+  margin-bottom: 30px;
+  border-bottom: 2px #ddd solid;
+}
+#app main .right .article-info .article-title {
+  font-size: 35px;
+  color: #2498ab;
+  font-weight: bolder;
+}
+#app main .right .article-info .article-detail {
+  padding: 10px 0;
+  display: flex;
+}
+#app main .right .article-info .article-detail .separater {
+  padding: 0 5px;
+}
+#app main .right #article-content {
+  background-color: inherit;
+  padding: 0;
+}
+#app footer {
+  background: #3d5362;
+  color: var(--white);
+}
+#app footer .footer-info {
+  display: flex;
+  height: 150px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#app footer .footer-info > p {
+  padding: 10px 0;
 }
 
 /*# sourceMappingURL=main.css.map */

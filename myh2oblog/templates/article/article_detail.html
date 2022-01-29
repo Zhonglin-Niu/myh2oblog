@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load my_tags %}
+{% block title %}吾水记{% endblock %}
+{% block top-imports %}
+    {% include 'imports/font-awesome.html' %}
+    {% include 'imports/jquery.html' %}
+    {% include 'imports/editormd.html' %}
+    <link rel="stylesheet" href="{% static 'article/css/main.css' %}">
+{% endblock %}
+{% block main %}
+    <main>
+        <div class="left">
+            <div class="sticky-part">
+                <div class="card">
+                    <div class="head">
+                        <div class="title">
+                            <i class="fa-fw fas fa-stream"></i>
+                            <p>目录</p>
+                        </div>
+                    </div>
+                    <div class="body" id="article-toc">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="article-info">
+                <p class="article-title">{{ article.title }}</p>
+                <div class="article-detail">
+                    <p><i class="fa-fw fas fa-clock"></i>{{ article.created|date:"Y-m-d" }}</p>
+                    <p class="separater">|</p>
+                    <p><i class="fa-fw fas fa-inbox"></i>{{ article.category }}</p>
+                    <p class="separater">|</p>
+                    <p>
+                        <i class="fa-fw fas fa-tags"></i>
+                        {% for tag in article.tag.all %}
+                            {{ tag }}
+                        {% endfor %}
+                    </p>
+                </div>
+            </div>
+            <div id="article-content">
+                <textarea style="display:none;">{{ article.content }}</textarea>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+{% block bottom-imports %}
+    <script type="text/javascript">
+        {#$(function () {#}
+        {#    var editor = editormd("test-editor", {#}
+        {#        width: "100%",#}
+        {#        height: "100%",#}
+        {#        path: "https://cdn.jsdelivr.net/gh/yremp/editormd/lib/",#}
+        {#    });#}
+        {#    console.log(editor)#}
+        {# });#}
+        $(function () {
+            let editor = editormd.markdownToHTML("article-content", {
+                tocContainer: "#article-toc",
+                width: "100%",
+                height: "100%",
+                path: "https://cdn.jsdelivr.net/gh/yremp/editormd/lib/",
+            });
+        });
+    </script>
+{% endblock %}

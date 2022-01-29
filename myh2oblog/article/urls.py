@@ -3,10 +3,11 @@
 # @Author : 风轻云
 # @File : urls.py
 
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 
 app_name = "article"
 urlpatterns = [
     path('', views.index, name="index"),
+    re_path(r'^article/(?P<nid>\d+)', views.article_detail, name="arti_detail"),
 ]
