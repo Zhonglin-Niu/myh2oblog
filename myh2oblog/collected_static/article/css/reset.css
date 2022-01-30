@@ -1,0 +1,73 @@
+/* 颜色命名 */
+:root {
+    --light-grey: #7c7c7c;
+    --white: #eee;
+}
+
+/* 主题所用颜色 */
+:root {
+    --bg-color: #A9C9FF;
+    --bg-gradient: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    /*--bg-gradient: linear-gradient(to right, #a8edea 0%, #fed6e3 100%);*/
+    --font-select: #f7f7f7;
+    --font-select-bg: #00c4b6;
+    --font: #4c4948;
+    --navbar-bg: rgba(93, 168, 197, 0.9);
+    --scrollbar-bg: #fff;
+    --scrollbar-btn-bg: #4d9be8;
+    --box-bg: #fff;
+    --box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.06);
+    --box-shadow-hover: 0 3px 8px 6px rgba(7, 17, 27, 0.3);
+    --a-hover: #7373ad;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    position: relative;
+    height: 100vh;
+    color: var(--font);
+    scroll-behavior: smooth;
+    font-family: "calibri", "宋体", sans-serif;
+}
+
+/* 滚动条设置 */
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: var(--scrollbar-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-btn-bg);
+}
+
+*::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-bg);
+}
+
+/* 字体选中设置 */
+*::selection {
+    background: var(--font-select-bg);
+    color: var(--font-select);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 网页背景 */
+.web-bg {
+    z-index: -999;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #A9C9FF;
+    background-image: var(--bg-gradient);
+}

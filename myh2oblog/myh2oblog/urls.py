@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('fqyadmin/', admin.site.urls, name="admin"),
     path('', include('article.urls', namespace="article")),
     path('api/', include('api.urls', namespace="api"))
 ]

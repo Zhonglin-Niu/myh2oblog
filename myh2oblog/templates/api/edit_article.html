@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block title %}编辑文章 | 吾水记{% endblock %}
+{% block top-imports %}
+    {% include 'imports/vue.html' %}
+    {% include 'imports/axios.html' %}
+    {% include 'imports/jquery.html' %}
+    {% include 'imports/editormd.html' %}
+    {% include 'imports/element-ui.html' %}
+    <link rel="stylesheet" href="{% static 'api/css/main.css' %}">
+{% endblock %}
+{% block header %}
+
+{% endblock %}
+{% block main %}
+    <el-drawer title="修改文章" :visible.sync="drawer" size="600px">
+        <el-collapse v-model="activeNames">
+            {% csrf_token %}
+            <el-collapse-item title="文章标题" name="1">
+                <el-input v-model="article.title" placeholder="请输入文章标题"></el-input>
+            </el-collapse-item>
+            <el-collapse-item title="文章描述" name="2">
+                <el-input type="textarea" :autosize="{ minRows: 3}" resize="none" placeholder="请输入文章描述" v-model="article
+                .description">
+                </el-input>
+            </el-collapse-item>
+            <el-collapse-item title="文章分类与标签" name="3">
+                <el-select v-model="article.category" placeholder="请选择文章分类" class="category">
+                    {% for category in categories %}
+                        <el-option
+                                key="{{ category.id }}"
+                                label="{{ category.title }}"
+                                value="{{ category.id }}">
+                        </el-option>
+                    {% endfor %}
+                </el-select>
+                <el-select v-model="article.tag" multiple collapse-tags placeholder="请选择标签" class="tag">
+                    {% for tag in tags %}
+                        <el-option
+                                key="{{ tag.id }}"
+                                label="{{ tag.title }}"
+                                value="{{ tag.id }}">
+                        </el-option>
+                    {% endfor %}
+                </el-select>
+            </el-collapse-item>
+            <el-collapse-item title="文章封面" name="4">
+                <img :src="article.cover" alt="" style="display: block;width: 45%; height: 160px; object-fit: cover;
+                border: 3px #eee solid">
+                <el-input v-model="article.cover" placeholder="请输入文章封面链接" clearable class="cover"></el-input>
+            </el-collapse-item>
+        </el-collapse>
+        <el-button type="primary" @click="open" class="submit_btn">修改文章</el-button>
+    </el-drawer>
+    <el-container>
+        <el-header>
+            <el-button @click="drawer = true" type="primary">补全文章信息</el-button>
+        </el-header>
+        <el-main>
+            <div id="article-content-area" tag="{{ tagss }}">
+                <textarea style="display:none;" ref="article_content">{{ article.content }}</textarea>
+            </div>
+        </el-main>
+    </el-container>
+{% endblock %}
+{% block footer %}
+
+{% endblock %}
+{% block bottom-imports %}
+    <script src="{% static 'api/js/main.js' %}"></script>
+    <script>
+        vue.$data.article.title = "{{ article.title }}";
+        vue.$data.article.description = "{{ article.description }}";
+        vue.$data.article.cover = "{{ article.cover }}";
+        vue.$data.article.category = "{{ article.category_id }}";
+        vue.$data.article.tag = eval(document.getElementById("article-content-area").getAttribute("tag"));
+    </script>
+{% endblock %}
