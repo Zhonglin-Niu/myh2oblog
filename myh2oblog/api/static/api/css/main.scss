@@ -1,0 +1,49 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑",
+  Arial, sans-serif;
+}
+
+.el-header {
+  background-color: #B3C0D1;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.el-main {
+  margin: 0 auto;
+  width: calc(100% - 50px);
+  max-width: 1500px;
+  height: calc(100vh - 40px);
+  position: relative;
+}
+
+.el-drawer__body {
+  padding: 20px;
+}
+
+.el-collapse-item__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.category {
+  width: 48%;
+}
+
+.tag {
+  width: 50%;
+}
+
+.cover {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.submit_btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
