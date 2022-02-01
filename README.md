@@ -1,1 +1,1 @@
-## Blog By Djan
+## Blog By Django
