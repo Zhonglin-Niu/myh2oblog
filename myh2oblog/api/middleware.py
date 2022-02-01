@@ -11,8 +11,6 @@ class HugAxios(MiddlewareMixin):
     def process_request(self, request):
         if request.method == 'POST' and request.META.get("CONTENT_TYPE") == 'application/json':
             request.data = json.loads(request.body)
-            print("post is coming")
 
     def process_response(self, request, response):
-        print("response is coming")
         return response
