@@ -30,34 +30,8 @@
                     <p>未想好公告，祝看到此博客的人开心吧</p>
                 </div>
             </div>
-            <div class="card">
-                <div class="head">
-                    <div class="title">
-                        <i class="fa-fw fas fa-tags"></i>
-                        <p>标签云</p>
-                    </div>
-                </div>
-                <div class="body">
-                    <a href="#">{% lorem 1 w %}</a>
-                    <a href="#">{% lorem 1 w %}</a>
-                    <a href="#">{% lorem 1 w %}</a>
-                    <a href="#">{% lorem 1 w %}</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="head">
-                    <div class="title">
-                        <i class="fa-fw fas fa-folder-open"></i>
-                        <p>分类</p>
-                    </div>
-                </div>
-                <div class="body">
-                    <a href="#">{% lorem 1 w %}</a>
-                    <a href="#">{% lorem 1 w %}</a>
-                    <a href="#">{% lorem 1 w %}</a>
-                    <a href="#">{% lorem 1 w %}</a>
-                </div>
-            </div>
+            {% tag_cloud %}
+            {% category_cloud %}
             <div class="card">
                 <div class="head">
                     <div class="title">

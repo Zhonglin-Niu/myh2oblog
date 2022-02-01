@@ -6,6 +6,11 @@
     {% include 'imports/jquery.html' %}
     {% include 'imports/editormd.html' %}
     <link rel="stylesheet" href="{% static 'article/css/main.css' %}">
+    <style>
+    li {
+        list-style: disc;
+    }
+    </style>
 {% endblock %}
 {% block main %}
     <main>
@@ -24,30 +29,32 @@
             </div>
         </div>
         <div class="right">
-            <div class="article-info">
-                <p class="article-title">{{ article.title }}</p>
-                {% if request.user.is_superuser %}
-                    <p>
-                        <a href="{% url 'api:editArticle' article.id %}">
-                            <i class="fa-fw fas fa-edit"></i>
-                        </a>
-                    </p>
-                {% endif %}
-                <div class="article-detail">
-                    <p><i class="fa-fw fas fa-clock"></i>{{ article.created|date:"Y-m-d" }}</p>
-                    <p class="separater">|</p>
-                    <p><i class="fa-fw fas fa-inbox"></i>{{ article.category }}</p>
-                    <p class="separater">|</p>
-                    <p>
-                        <i class="fa-fw fas fa-tags"></i>
-                        {% for tag in article.tag.all %}
-                            {{ tag }}
-                        {% endfor %}
-                    </p>
+            <div class="article-main">
+                <div class="article-info">
+                    <p class="article-title">{{ article.title }}</p>
+                    {% if request.user.is_superuser %}
+                        <p>
+                            <a href="{% url 'api:editArticle' article.id %}">
+                                <i class="fa-fw fas fa-edit"></i>
+                            </a>
+                        </p>
+                    {% endif %}
+                    <div class="article-detail">
+                        <p><i class="fa-fw fas fa-clock"></i>{{ article.created|date:"Y-m-d" }}</p>
+                        <p class="separater">|</p>
+                        <p><i class="fa-fw fas fa-inbox"></i>{{ article.category }}</p>
+                        <p class="separater">|</p>
+                        <p>
+                            <i class="fa-fw fas fa-tags"></i>
+                            {% for tag in article.tag.all %}
+                                {{ tag }}
+                            {% endfor %}
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div id="article-content">
-                <textarea style="display:none;">{{ article.content }}</textarea>
+                <div id="article-content">
+                    <textarea style="display:none;">{{ article.content }}</textarea>
+                </div>
             </div>
         </div>
     </main>

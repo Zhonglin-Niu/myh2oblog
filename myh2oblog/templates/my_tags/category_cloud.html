@@ -1,0 +1,20 @@
+<div class="card card-category-cloud">
+    <div class="head">
+        <div class="title">
+            <i class="fa-fw fas fa-folder-open"></i>
+            <p>分类</p>
+        </div>
+    </div>
+    <div class="body">
+        <ul>
+            {% for category in categories %}
+                <li>
+                    <a href="#">
+                        <span>{{ category.title }}</span>
+                        <span>{{ category.number }}</span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

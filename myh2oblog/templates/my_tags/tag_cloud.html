@@ -1,0 +1,13 @@
+<div class="card card-tag-cloud">
+    <div class="head">
+        <div class="title">
+            <i class="fa-fw fas fa-tags"></i>
+            <p>标签云</p>
+        </div>
+    </div>
+    <div class="body">
+        {% for tag in tags %}
+            <a href="#">{{ tag.title }}</a>
+        {% endfor %}
+    </div>
+</div>

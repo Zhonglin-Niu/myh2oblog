@@ -3,7 +3,11 @@
   border-radius: 5px;
   padding: 20px;
   margin-bottom: 15px;
-  box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.06);
+  transition: all 0.3s;
+  box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.1);
+}
+.card:hover {
+  box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.2);
 }
 .card .head {
   display: flex;
@@ -21,6 +25,24 @@
   padding-top: 15px;
 }
 
+.card-tag-cloud .body a {
+  display: inline-block;
+  padding: 0.1rem 0.3rem;
+}
+
+.card-category-cloud .body li a {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 5px 0;
+  transition: background-color 0.3s, padding 0.3s;
+}
+.card-category-cloud .body li a:hover {
+  padding: 5px 15px;
+  background-color: var(--navbar-bg);
+  color: white;
+}
+
 .article {
   overflow: hidden;
   position: relative;
@@ -30,7 +52,11 @@
   background-color: #ffffff;
   border-radius: 8px 50px 50px 8px;
   margin-bottom: 15px;
-  box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.06);
+  transition: all 0.3s;
+  box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.1);
+}
+.article:hover {
+  box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.2);
 }
 .article .article-img {
   position: relative;
@@ -62,7 +88,7 @@
   font-size: 26px;
   transition: all 0.4s;
 }
-.article .article-info .article-title:hover {
+.article .article-info .article-title a:hover {
   color: #2498ab;
 }
 .article .article-info .article-meta-info {
@@ -187,23 +213,26 @@
 }
 #app main .right {
   width: 68%;
-  background-color: white;
+  background-color: transparent;
+}
+#app main .right > .article-main {
+  background-color: #fff;
   padding: 20px;
 }
-#app main .right > .article-info {
+#app main .right > .article-main .article-info {
   margin-bottom: 30px;
   border-bottom: 2px #ddd solid;
 }
-#app main .right > .article-info .article-title {
+#app main .right > .article-main .article-info .article-title {
   font-size: 35px;
   color: #2498ab;
   font-weight: bolder;
 }
-#app main .right > .article-info .article-detail {
+#app main .right > .article-main .article-info .article-detail {
   padding: 10px 0;
   display: flex;
 }
-#app main .right > .article-info .article-detail .separater {
+#app main .right > .article-main .article-info .article-detail .separater {
   padding: 0 5px;
 }
 #app main .right #article-content {
