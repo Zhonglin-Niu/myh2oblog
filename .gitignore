@@ -1,5 +1,7 @@
 /myh2oblogvenv
+collected_static
 .idea
 __pycache__
 *.bat
+*.sh
 gitPush.py
