@@ -47,6 +47,11 @@
   color: white;
 }
 
+.card-toc .body {
+  overflow: scroll;
+  max-height: 80vh;
+}
+
 .article {
   overflow: hidden;
   position: relative;
@@ -255,6 +260,10 @@
   color: white;
   background: #2fa6de;
 }
+#app main .left #article-toc a.active {
+  color: white;
+  background: #2fa6de;
+}
 #app main .left #article-toc div > ul {
   padding: 0 10px;
 }
@@ -267,6 +276,7 @@
 }
 #app main .right > .article-main {
   background-color: #fff;
+  border-radius: 8px;
   padding: 20px;
 }
 #app main .right > .article-main .article-info {

@@ -60,6 +60,14 @@
   }
 }
 
+.card-toc {
+  .body {
+    overflow: scroll;
+    max-height: 80vh;
+  }
+}
+
+
 .article {
   overflow: hidden;
   position: relative;
@@ -314,6 +322,11 @@
           }
         }
 
+        a.active {
+          color: white;
+          background: #2fa6de;
+        }
+
         div > ul {
           padding: 0 10px;
 
@@ -330,6 +343,7 @@
 
       > .article-main {
         background-color: #fff;
+        border-radius: 8px;
         padding: 20px;
 
         .article-info {

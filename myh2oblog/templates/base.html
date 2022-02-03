@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'article/css/reset.css' %}">
     {% include 'imports/font-awesome.html' %}
     <link rel="stylesheet" href="{% static 'article/css/main.css' %}">
+    <script src="{% static 'article/js/utils.js' %}"></script>
     {% block top-imports %}
 
     {% endblock %}
@@ -112,7 +113,10 @@
 {% endblock %}
 <script>
     window.onload = () => {
-        document.getElementById("loader").classList.add("disappear")
+        document.getElementById("loader").classList.add("disappear");
+        constants.$tocAs = document.querySelectorAll("a[name]");
+        constants.$tocLinks = document.querySelectorAll("a[level]");
+        constants.$tocLinks[0].classList.add('active')
     }
 </script>
 </body>
