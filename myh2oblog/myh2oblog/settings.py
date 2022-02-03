@@ -146,7 +146,7 @@ STATIC_ROOT = BASE_DIR / 'collected_static'
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
 
-SIMPLEUI_LOGO = 'http://pic.myh2o.top/favicon'
+SIMPLEUI_LOGO = 'https://pic.myh2o.top/favicon'
 SIMPLEUI_HOME_INFO = False
 SIMPLEUI_ANALYSIS = False
 

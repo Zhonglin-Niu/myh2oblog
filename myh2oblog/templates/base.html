@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %} | 个人博客</title>
-    <link rel="shortcut icon" href="http://pic.myh2o.top/favicon">
+    <link rel="shortcut icon" href="https://pic.myh2o.top/favicon">
     <link rel="stylesheet" href="{% static 'article/css/reset.css' %}">
     {% include 'imports/font-awesome.html' %}
     <link rel="stylesheet" href="{% static 'article/css/main.css' %}">
@@ -116,7 +116,7 @@
         document.getElementById("loader").classList.add("disappear");
         constants.$tocAs = document.querySelectorAll("a[name]");
         constants.$tocLinks = document.querySelectorAll("a[level]");
-        constants.$tocLinks[0].classList.add('active')
+        if (constants.$tocLinks) constants.$tocLinks[0].classList.add('active');
     }
 </script>
 </body>
