@@ -35,7 +35,7 @@ const vue = new Vue({
                 title: '',
                 description: '',
                 content: '',
-                cover: "http://pic.myh2o.top/defaultCover",
+                cover: "https://pic.myh2o.top/defaultCover",
                 category: '',
                 tag: [],
             }

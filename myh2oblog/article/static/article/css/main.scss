@@ -35,6 +35,11 @@
     a {
       display: inline-block;
       padding: .1rem .3rem;
+      transition: color .2s;
+
+      &:hover {
+        color: rgba(93, 168, 197, 1);
+      }
     }
   }
 }
@@ -59,7 +64,7 @@
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: 180px;
+  height: 225px;
   display: flex;
   background-color: #ffffff;
   border-radius: 8px 50px 50px 8px;
@@ -103,7 +108,10 @@
 
     .article-title {
       font-size: 26px;
-      transition: all .4s;
+
+      a {
+        transition: all .4s;
+      }
 
       a:hover {
         color: #2498ab;
@@ -132,6 +140,38 @@
         overflow: hidden;
         text-overflow: ellipsis;
       }
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  .step-links {
+    a, span {
+      text-align: center;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 7px;
+      margin: 0 4px;
+    }
+
+    a {
+      background-color: #fff;
+      transition: all .2s;
+
+      &:hover {
+        background-color: #9a619a;
+        color: white;
+      }
+    }
+
+    .current {
+      background-color: rgb(93, 168, 197);
+      color: white;
     }
   }
 }

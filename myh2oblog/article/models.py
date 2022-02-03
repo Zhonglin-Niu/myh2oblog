@@ -32,7 +32,7 @@ class Articles(models.Model):
     description = models.CharField(verbose_name='文章简介', max_length=128, null=True, blank=True)
     content = models.TextField(verbose_name='文章内容')
     created = models.DateTimeField(verbose_name='文章发布日期', auto_now_add=True, null=True)
-    cover = models.URLField(max_length=300, verbose_name='封面图链接', default="http://pic.myh2o.top/defaultCover")
+    cover = models.URLField(max_length=300, verbose_name='封面图链接', default="https://pic.myh2o.top/defaultCover")
     category = models.ForeignKey(to='Categories', verbose_name="文章分类", blank=True, on_delete=models.SET_DEFAULT,
                                  default=set_default_category)
     tag = models.ManyToManyField(to='Tags', verbose_name='文章标签', blank=True)

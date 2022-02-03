@@ -4,6 +4,7 @@
 {% block top-imports %}
     {% include 'imports/font-awesome.html' %}
     <link rel="stylesheet" href="{% static 'article/css/main.css' %}">
+    <script src="{% static 'article/js/lazyload.js' %}"></script>
 {% endblock %}
 {% block main %}
     <main>
@@ -45,35 +46,53 @@
             </div>
         </div>
         <div class="right">
-            {% for article in articles %}
-                <div class="article">
-                    <div class="article-img">
-                        <a href="{% url 'article:arti_detail' article.id %}">
-                            <img src="{{ article.cover }}" alt="">
-                        </a>
-                    </div>
-                    <div class="article-info">
-                        <div class="article-title"><a
-                                href="{% url 'article:arti_detail' article.id %}">{{ article.title }}</a></div>
-                        <div class="article-meta-info">
-                            <p><i class="fa-fw fas fa-clock"></i>{{ article.created|date:"Y-m-d" }}</p>
-                            <p class="separater">|</p>
-                            <p><i class="fa-fw fas fa-inbox"></i>{{ article.category }}</p>
+            <div class="articles">
+                {% for article in articles %}
+                    <div class="article">
+                        <div class="article-img">
+                            <a href="{% url 'article:arti_detail' article.id %}">
+                                <img data-src="{{ article.cover }}" alt="" class="lazyload">
+                            </a>
                         </div>
-                        <div class="article-description">
-                            <p>{{ article.description }}</p>
+                        <div class="article-info">
+                            <div class="article-title"><a
+                                    href="{% url 'article:arti_detail' article.id %}">{{ article.title }}</a></div>
+                            <div class="article-meta-info">
+                                <p><i class="fa-fw fas fa-clock"></i>{{ article.created|date:"Y-m-d" }}</p>
+                                <p class="separater">|</p>
+                                <p><i class="fa-fw fas fa-inbox"></i>{{ article.category }}</p>
+                            </div>
+                            <div class="article-description">
+                                <p>{{ article.description }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
+            <div class="pagination">
+                <span class="step-links">
+                    {% if articles.has_previous %}
+                        <a href="?page=1">&laquo; 1</a>
+                        <span>...</span>
+                        <a href="?page={{ articles.previous_page_number }}">{{ articles.previous_page_number }}</a>
+                    {% endif %}
+
+                    <span class="current">
+                        {{ articles.number }}
+                    </span>
+
+                    {% if articles.has_next %}
+                        <a href="?page={{ articles.next_page_number }}">{{ articles.next_page_number }}</a>
+                        <span>...</span>
+                        <a href="?page={{ articles.paginator.num_pages }}">{{ articles.paginator.num_pages }} &raquo;</a>
+                    {% endif %}
+                </span>
+            </div>
         </div>
     </main>
 {% endblock %}
 {% block bottom-imports %}
-{#    <script>#}
-{#        const vue = new Vue({#}
-{#            el: "#app",#}
-{#            delimiters: ["[[", "]]"],#}
-{#        })#}
-{#    </script>#}
+    <script>
+        lazyload();
+    </script>
 {% endblock %}

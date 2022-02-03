@@ -28,6 +28,10 @@
 .card-tag-cloud .body a {
   display: inline-block;
   padding: 0.1rem 0.3rem;
+  transition: color 0.2s;
+}
+.card-tag-cloud .body a:hover {
+  color: #5da8c5;
 }
 
 .card-category-cloud .body li a {
@@ -47,7 +51,7 @@
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: 180px;
+  height: 225px;
   display: flex;
   background-color: #ffffff;
   border-radius: 8px 50px 50px 8px;
@@ -86,6 +90,8 @@
 }
 .article .article-info .article-title {
   font-size: 26px;
+}
+.article .article-info .article-title a {
   transition: all 0.4s;
 }
 .article .article-info .article-title a:hover {
@@ -108,6 +114,32 @@
   -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.pagination .step-links a, .pagination .step-links span {
+  text-align: center;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 7px;
+  margin: 0 4px;
+}
+.pagination .step-links a {
+  background-color: #fff;
+  transition: all 0.2s;
+}
+.pagination .step-links a:hover {
+  background-color: #9a619a;
+  color: white;
+}
+.pagination .step-links .current {
+  background-color: #5da8c5;
+  color: white;
 }
 
 #app header .navbar {
