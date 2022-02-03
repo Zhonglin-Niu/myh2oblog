@@ -2,10 +2,8 @@
 {% load my_tags %}
 {% block title %}{{ article.title }} | 吾水记{% endblock %}
 {% block top-imports %}
-    {% include 'imports/font-awesome.html' %}
     {% include 'imports/jquery.html' %}
     {% include 'imports/editormd.html' %}
-    <link rel="stylesheet" href="{% static 'article/css/main.css' %}">
     <style>
     li {
         list-style: disc;

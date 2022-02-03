@@ -8,6 +8,8 @@
     <title>{% block title %}{% endblock %} | 个人博客</title>
     <link rel="shortcut icon" href="http://pic.myh2o.top/favicon">
     <link rel="stylesheet" href="{% static 'article/css/reset.css' %}">
+    {% include 'imports/font-awesome.html' %}
+    <link rel="stylesheet" href="{% static 'article/css/main.css' %}">
     {% block top-imports %}
 
     {% endblock %}

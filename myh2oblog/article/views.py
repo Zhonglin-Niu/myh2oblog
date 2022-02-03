@@ -14,3 +14,12 @@ def index(request):
 def article_detail(request, nid):
     article = Articles.objects.get(id=nid)
     return render(request, 'article/article_detail.html', locals())
+
+
+def archive(request):
+    articles = Articles.objects.all().order_by('-created')
+    article_count = articles.count()
+    articles = Paginator(articles, 30)
+    page = request.GET.get('page')
+    articles = articles.get_page(page)
+    return render(request, 'article/article_archive.html', locals())

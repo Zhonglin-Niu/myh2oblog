@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% load my_tags %}
-{% block title %}吾水记{% endblock %}
+{% block title %}归档{% endblock %}
 {% block top-imports %}
-    <script src="{% static 'article/js/lazyload.js' %}"></script>
+
 {% endblock %}
 {% block main %}
     <main>
@@ -44,28 +44,17 @@
             </div>
         </div>
         <div class="right">
-            <div class="articles">
-                {% for article in articles %}
-                    <div class="article">
-                        <div class="article-img">
-                            <a href="{% url 'article:arti_detail' article.id %}">
-                                <img data-src="{{ article.cover }}" alt="" class="lazyload">
-                            </a>
+            <div class="archive shadow">
+                <div class="total"><h2>文章总数 — {{ article_count }}</h2></div>
+                <div class="lists">
+                    <div class="lists-line"></div>
+                    {% for article in articles %}
+                        <div class="list">
+                            <span>{{ article.created|date:"Y-m-d" }}</span>
+                            <a class="title" href="{% url 'article:arti_detail' article.id %}">{{ article.title }}</a>
                         </div>
-                        <div class="article-info">
-                            <div class="article-title"><a
-                                    href="{% url 'article:arti_detail' article.id %}">{{ article.title }}</a></div>
-                            <div class="article-meta-info">
-                                <p><i class="fa-fw fas fa-clock"></i>{{ article.created|date:"Y-m-d" }}</p>
-                                <p class="separater">|</p>
-                                <p><i class="fa-fw fas fa-inbox"></i>{{ article.category }}</p>
-                            </div>
-                            <div class="article-description">
-                                <p>{{ article.description }}</p>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
             <div class="pagination">
                 <span class="step-links">
@@ -88,7 +77,5 @@
     </main>
 {% endblock %}
 {% block bottom-imports %}
-    <script>
-        lazyload();
-    </script>
+
 {% endblock %}
