@@ -116,7 +116,7 @@
         document.getElementById("loader").classList.add("disappear");
         constants.$tocAs = document.querySelectorAll("a[name]");
         constants.$tocLinks = document.querySelectorAll("a[level]");
-        if (constants.$tocLinks) constants.$tocLinks[0].classList.add('active');
+        if (constants.$tocLinks.length > 0) constants.$tocLinks[0].classList.add('active');
     }
 </script>
 </body>
