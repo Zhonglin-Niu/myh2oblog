@@ -65,11 +65,11 @@ const vue = new Vue({
                 cover: this.article.cover,
                 tag: this.article.tag,
             };
-            console.log(data);
+            // console.log(data);
             let url = location.href.split('/api/')[1];
             url = `/api/${url}`;
             axios.post(`${url}`, data).then(res => {
-                console.log(res);
+                // console.log(res);
                 if (res.code) {
                     this.$message.error(res.msg);
                     return
