@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load my_tags %}
+{% block title %}标签{% endblock %}
+{% block top-imports %}
+
+{% endblock %}
+{% block main %}
+    <main>
+        <div class="left">
+            <div class="card">
+                <div class="head">
+                    <div class="title">
+                        <i class="fa-fw fas fa-id-card"></i>
+                        <p>站长信息</p>
+                    </div>
+                </div>
+                <div class="body">
+                    <p>一个高中生</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="head">
+                    <div class="title">
+                        <i class="fa-fw fas fa-bullhorn"></i>
+                        <p>公告</p>
+                    </div>
+                </div>
+                <div class="body">
+                    <p>未想好公告，祝看到此博客的人开心吧</p>
+                </div>
+            </div>
+            {% tag_cloud %}
+            {% category_cloud %}
+            <div class="card">
+                <div class="head">
+                    <div class="title">
+                        <i class="fa-fw fas fa-folder-open"></i>
+                        <p>网站信息</p>
+                    </div>
+                </div>
+                <div class="body">
+                    <p>文章共计X篇</p>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="tags shadow">
+                {% for tag in tags %}
+                    <div class="area">
+                        <h2>{{ tag.title }}</h2>
+                        {% for article in tag.articles_set.all %}
+                            <p class="titles"><a href="{% url 'article:arti_detail' article.id %}"
+                            >{{ article.title }}</a></p>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock %}
+{% block bottom-imports %}
+
+{% endblock %}

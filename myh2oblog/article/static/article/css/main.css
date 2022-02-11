@@ -362,4 +362,17 @@
   padding-left: 30px;
 }
 
+.tags {
+  background-color: #fff;
+  padding: 30px 50px 20px;
+  border-radius: 8px;
+  min-height: 70vh;
+}
+.tags .area {
+  margin-bottom: 20px;
+}
+.tags .titles {
+  padding-left: 30px;
+}
+
 /*# sourceMappingURL=main.css.map */

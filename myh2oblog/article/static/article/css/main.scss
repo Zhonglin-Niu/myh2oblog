@@ -446,3 +446,18 @@
     }
   }
 }
+
+.tags {
+  background-color: #fff;
+  padding: 30px 50px 20px;
+  border-radius: 8px;
+  min-height: 70vh;
+
+  .area {
+    margin-bottom: 20px;
+  }
+
+  .titles {
+    padding-left: 30px;
+  }
+}

@@ -72,16 +72,18 @@
                 constants.$tocAs.forEach((ele) => {
                     if (0 <= ele.getBoundingClientRect().top && ele.getBoundingClientRect().top <= 50) {
                         let href = '#' + ele.getAttribute("name");
+                        {#let root_href = location.href.split("#")[0];#}
                         constants.$tocLinks.forEach((ele) => {
                             ele.classList.remove('active');
                             if (ele.getAttribute("href") === href) {
+                                {#location.href = root_href + href;#}
                                 ele.classList.add("active");
                                 ele.scrollIntoViewIfNeeded();
                             }
                         })
                     }
                 })
-            }
+             }
         })
     </script>
 {% endblock %}

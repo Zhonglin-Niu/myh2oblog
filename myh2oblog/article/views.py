@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, reverse, redirect
-from .models import Articles
+from .models import Articles, Tags, Categories
 from django.core.paginator import Paginator
 
 
@@ -23,3 +23,13 @@ def archive(request):
     page = request.GET.get('page')
     articles = articles.get_page(page)
     return render(request, 'article/article_archive.html', locals())
+
+
+def tags_(request):
+    tags = Tags.objects.all()
+    return render(request, 'article/article_tags.html', locals())
+
+
+def categories_(request):
+    categories = Categories.objects.all()
+    return render(request, 'article/article_categories.html', locals())

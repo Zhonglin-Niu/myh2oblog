@@ -11,4 +11,6 @@ urlpatterns = [
     path('', views.index, name="index"),
     re_path(r'^article/(?P<nid>\d+)', views.article_detail, name="arti_detail"),
     path('archive/', views.archive, name="arti_archive"),
+    path('tags/', views.tags_, name="arti_tags"),
+    path('categories/', views.categories_, name="arti_categories"),
 ]
