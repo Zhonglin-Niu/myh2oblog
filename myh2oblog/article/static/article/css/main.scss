@@ -16,7 +16,7 @@
 
     .title {
       display: flex;
-      font-size: 20px;
+      font-size: 1.2rem;
       align-items: center;
 
       > p {
@@ -115,9 +115,14 @@
     }
 
     .article-title {
-      font-size: 26px;
+      font-size: 1.6rem;
 
       a {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
         transition: all .4s;
       }
 
@@ -221,7 +226,7 @@
       background-color: var(--navbar-bg);
 
       .left {
-        font-size: 24px;
+        font-size: 1.5rem;
       }
 
       .right {
@@ -290,8 +295,9 @@
 
   main {
     margin: 80px auto 40px;
-    width: 1200px;
-    min-height: 80vh;
+    padding: 0 20px;
+    max-width: 1200px;
+    min-height: 90vh;
     display: flex;
     justify-content: space-between;
 
@@ -310,7 +316,7 @@
 
         a {
           color: rgb(93, 168, 197);
-          font-size: 18px;
+          font-size: 1.1rem;
           transition: all .5s;
           display: block;
           width: 100%;
@@ -351,7 +357,7 @@
           border-bottom: 2px #ddd solid;
 
           .article-title {
-            font-size: 35px;
+            font-size: 2.1rem;
             color: #2498ab;
             font-weight: bolder;
           }
@@ -410,7 +416,7 @@
 
   .lists {
     position: relative;
-    font-size: 20px;
+    font-size: 1.2rem;
 
     .lists-line {
       position: absolute;

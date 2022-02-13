@@ -15,7 +15,7 @@
 }
 .card .head .title {
   display: flex;
-  font-size: 20px;
+  font-size: 1.2rem;
   align-items: center;
 }
 .card .head .title > p {
@@ -94,9 +94,14 @@
   padding: 5px 0;
 }
 .article .article-info .article-title {
-  font-size: 26px;
+  font-size: 1.6rem;
 }
 .article .article-info .article-title a {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
   transition: all 0.4s;
 }
 .article .article-info .article-title a:hover {
@@ -180,7 +185,7 @@
   background-color: var(--navbar-bg);
 }
 #app header .navbar .left {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 #app header .navbar .right {
   display: flex;
@@ -233,8 +238,9 @@
 }
 #app main {
   margin: 80px auto 40px;
-  width: 1200px;
-  min-height: 80vh;
+  padding: 0 20px;
+  max-width: 1200px;
+  min-height: 90vh;
   display: flex;
   justify-content: space-between;
 }
@@ -250,7 +256,7 @@
 }
 #app main .left #article-toc a {
   color: #5da8c5;
-  font-size: 18px;
+  font-size: 1.1rem;
   transition: all 0.5s;
   display: block;
   width: 100%;
@@ -284,7 +290,7 @@
   border-bottom: 2px #ddd solid;
 }
 #app main .right > .article-main .article-info .article-title {
-  font-size: 35px;
+  font-size: 2.1rem;
   color: #2498ab;
   font-weight: bolder;
 }
@@ -330,7 +336,7 @@
 }
 .archive .lists {
   position: relative;
-  font-size: 20px;
+  font-size: 1.2rem;
 }
 .archive .lists .lists-line {
   position: absolute;

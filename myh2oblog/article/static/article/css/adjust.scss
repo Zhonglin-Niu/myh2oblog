@@ -1,0 +1,114 @@
+.el-drawer.rtl {
+  width: 50vw !important;
+}
+
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 16px;
+  }
+
+  .smallScreen {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  html {
+    font-size: 14px;
+  }
+
+  .bigScreen {
+    display: none !important;
+  }
+
+  #app main {
+    flex-direction: column;
+
+    .left, .right {
+      width: 100%;
+    }
+
+    .left {
+      order: 2;
+    }
+
+    .right {
+      margin-bottom: 30px;
+    }
+  }
+
+  .article {
+    height: 140px;
+    border-radius: 8px;
+  }
+
+  .navbar .smallScreen {
+    position: relative;
+
+    input {
+      z-index: 2;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      opacity: 0;
+
+      &:checked ~ ul {
+        width: 150px;
+      }
+
+      &:checked ~ span:nth-child(2) {
+        top: calc(50% - 2px);
+        transform: rotate(-45deg);
+        transition: top 0.3s ease-in-out, transform 0.3s ease-in-out 0.3s;
+      }
+
+      &:checked ~ span:nth-child(3) {
+        top: calc(50% - 2px);
+        transform: rotate(45deg);
+        transition: top 0.3s ease-in-out, transform 0.3s ease-in-out 0.3s;
+      }
+    }
+
+    > span {
+      position: absolute;
+      right: 5px;
+      top: calc(50% - 10px);
+      width: 30px;
+      height: 4px;
+      border-radius: 15px;
+      background-color: white;
+      pointer-events: none;
+      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out 0.3s;
+    }
+
+    span:nth-child(3) {
+      top: calc(50% + 6px);
+    }
+
+    ul {
+      position: fixed;
+      top: 55px;
+      right: 0;
+      width: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: var(--navbar-bg);
+      transition: all 0.5s;
+      white-space: nowrap;
+
+      li {
+        text-align: center;
+        width: 100%;
+        margin: 7px 0;
+        padding: 9px 5px;
+        transition: all .3s;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, .5);
+        }
+      }
+    }
+  }
+}
