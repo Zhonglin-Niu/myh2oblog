@@ -1,4 +1,4 @@
-const constants = {};
+const constants = {scrollListened: true};
 const tools = {
     getEleTop: (ele) => {
         let actualTop = ele.offsetTop

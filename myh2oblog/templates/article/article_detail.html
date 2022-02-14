@@ -68,22 +68,40 @@
             });
         });
         window.addEventListener('scroll', function () {
+            if (!constants.scrollListened) return
             if (constants.$tocAs) {
                 constants.$tocAs.forEach((ele) => {
                     if (0 <= ele.getBoundingClientRect().top && ele.getBoundingClientRect().top <= 50) {
                         let href = '#' + ele.getAttribute("name");
-                        {#let root_href = location.href.split("#")[0];#}
                         constants.$tocLinks.forEach((ele) => {
                             ele.classList.remove('active');
                             if (ele.getAttribute("href") === href) {
-                                {#location.href = root_href + href;#}
                                 ele.classList.add("active");
                                 ele.scrollIntoViewIfNeeded();
                             }
                         })
                     }
                 })
-             }
+            }
         })
+        const tocClickTimer = setInterval(() => {
+            if (constants.$tocLinks) {
+                clearInterval(tocClickTimer)
+                constants.$tocLinks.forEach((item, index) => {
+                    item.addEventListener('click', (e) => {
+                        e.preventDefault()
+                        constants.$tocAs[index].scrollIntoView()
+                        constants.$tocLinks.forEach((ele) => {
+                            ele.classList.remove('active');
+                        })
+                        constants.$tocLinks[index].classList.add("active")
+                        constants.scrollListened = false
+                        setTimeout(() => {
+                            constants.scrollListened = true
+                        }, 600)
+                    })
+                })
+            }
+        }, 100)
     </script>
 {% endblock %}
